@@ -6,8 +6,8 @@ from service import room_service, room_message_service
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
 app.register_blueprint(hubExcept)
+CORS(app)
 cnn = new_connections_sqlite()
 
 
@@ -30,14 +30,6 @@ def send_message():
 @app.route('/get_message', methods = ['POST'])
 def get_message():
     return room_message_service.get_message(request,cnn)
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
