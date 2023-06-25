@@ -1,0 +1,14 @@
+version: "3"
+services:
+  ocr-api:
+    container_name: microservice_horped
+    network_mode: host
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 500M
