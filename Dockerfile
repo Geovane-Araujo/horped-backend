@@ -10,4 +10,4 @@ ENV SSL_CERTIFICATE=/app/letsencrypt.crt
 ENV SSL_KEY=/app/letsencrypt.key
 
 EXPOSE 5010
-CMD ["python", "-m", "flask", "run", "--host=0.0.0.0", "--port=5010", "--cert=$SSL_CERTIFICATE", "--key=$SSL_KEY"]
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0", "--port=5010", "--cert=/app/letsencrypt.crt", "--key=/app/letsencrypt.key"]
